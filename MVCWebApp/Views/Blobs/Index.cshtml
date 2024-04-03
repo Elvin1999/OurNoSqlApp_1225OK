@@ -1,0 +1,26 @@
+﻿<h2>
+    Pictures
+</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <td>Picture</td>
+        <td>Name</td>
+        <td>Actions</td>
+    </tr>
+
+    @foreach (var item in ViewBag.blobs as List<FileBlob>)
+    {
+        <tr>
+            <td>
+                <img src="@item.Url" class="img-thumbnail" style="width:100px;"/>
+            </td>
+            <td>
+                @item.Name
+            </td>
+            <td>
+
+            </td>
+        </tr>
+    }
+</table>
