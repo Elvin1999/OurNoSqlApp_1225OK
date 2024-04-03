@@ -1,4 +1,21 @@
-﻿<h2>
+﻿
+<h2>
+    Save Picture
+</h2>
+
+
+<form asp-action="Upload" method="post" enctype="multipart/form-data">
+    <input type="file" name="picture" />
+    <button class="btn btn-primary" type="submit" > Save</button>
+</form>
+
+<h2>Logs</h2>
+@foreach (var item in ViewBag.logs as List<string>)
+{
+    <strong>@item</strong><br />
+}
+
+<h2>
     Pictures
 </h2>
 
@@ -19,7 +36,8 @@
                 @item.Name
             </td>
             <td>
-
+                <a class="btn btn-warning" asp-action="Download" asp-route-filename="@item.Name">Download</a>
+                <a class="btn btn-danger" asp-action="Delete" asp-route-filename="@item.Name">Delete</a>
             </td>
         </tr>
     }
